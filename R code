@@ -1,0 +1,53 @@
+---
+title: "pratice_R"
+author: "Minh Long Nguyen"
+output: pdf_document
+date: "2024-11-11"
+---
+
+# Introduction
+
+Hello, everyone! Today marks the beginning of my journey into data cleaning with R. To practice, I’ll be diving into the **nycflights13** dataset, learning how to organize and transform data effectively.
+
+## Setting Up the Data
+
+To get started, let’s load the dataset by installing and loading the necessary packages.
+
+```{r setup, message=FALSE, warning=FALSE}
+install.packages("nycflights13")
+library(nycflights13)
+```
+
+## A Quick Overview Of the Dataset
+View the entire dataset (opens in a separate tab)
+
+                              View(flights)
+
+To display the first few rows, following the command below:
+```{r head, message=FALSE}
+head(flights)
+```
+
+## For A More Detailed View Of Data Structure
+```{r message=FALSE}
+install.packages("tidyverse")
+library(tidyverse)
+glimpse(flights)
+```
+
+## Cleaning The Data
+After inspecting the data, we’ll clean it by removing rows with missing values using `drop_na()` from **tidyr**.
+
+```{r clean_data, message=FALSE}
+# Load the tidyr package if not already loaded
+library(tidyr)
+
+# Remove rows with any missing values in the flights dataset
+cleaned_flights <- drop_na(flights)
+
+# Display the cleaned dataset
+head(cleaned_flights)
+```
+
+
+
